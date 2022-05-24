@@ -34,19 +34,13 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun WellnessScreen(modifier: Modifier = Modifier) {
-    StatefulCounter(modifier)
-}
+
+
 
 @Composable
 fun StatefulCounter(modifier: Modifier = Modifier) {
     var count by rememberSaveable { mutableStateOf(0) }
-    var juiceCount by rememberSaveable { mutableStateOf(0) }
-    Column {
-        StatelessCounter(count, { count++ }, modifier)
-        StatelessCounter(juiceCount, { juiceCount++ }, modifier)
-    }
+    StatelessCounter(count, { count++ }, modifier)
 }
 
 @Composable
