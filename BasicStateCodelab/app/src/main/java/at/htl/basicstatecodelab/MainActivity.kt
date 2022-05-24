@@ -42,7 +42,11 @@ fun WellnessScreen(modifier: Modifier = Modifier) {
 @Composable
 fun StatefulCounter(modifier: Modifier = Modifier) {
     var count by rememberSaveable { mutableStateOf(0) }
-    StatelessCounter(count, { count++ }, modifier)
+    var juiceCount by rememberSaveable { mutableStateOf(0) }
+    Column {
+        StatelessCounter(count, { count++ }, modifier)
+        StatelessCounter(juiceCount, { juiceCount++ }, modifier)
+    }
 }
 
 @Composable
@@ -56,4 +60,5 @@ fun StatelessCounter(count: Int, onIncrement: () -> Unit, modifier: Modifier = M
         }
     }
 }
+
 
