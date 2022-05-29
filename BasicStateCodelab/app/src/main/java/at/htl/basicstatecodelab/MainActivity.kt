@@ -56,3 +56,8 @@ fun StatelessCounter(count: Int, onIncrement: () -> Unit, modifier: Modifier = M
 }
 
 
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    WellnessScreen()
+}
